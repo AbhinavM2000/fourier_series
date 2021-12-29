@@ -44,7 +44,7 @@ void getData(double period, double numPt, double step, double p, double q) {
         fx_real = 1;
       }
     }
-//Some corrections for the left end of the square wave at X = -L
+//Some corrections to make square wave fit properly at X = -L
     if (i < -l + p + 1 + 0.5 * period * 0.5 && width % 2 == 0) {
       if (width % 2 == 0)
         fx_real = -1;
