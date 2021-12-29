@@ -1,5 +1,5 @@
 
-# Usage:
+## Usage:
 
-Run fourier.C to plot points.
-Run plot.py to draw the graph.
+<p>Run fourier.C to plot points.<br>
+<p>Run plot.py to draw the graph.
