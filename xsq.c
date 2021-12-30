@@ -22,7 +22,7 @@ void getData(double period, double numPt, double step, double p, double q) {
     return;
   }
 
-  for (double i = -l + p + 1; i <= l + q - 1; i = i + step) {
+  for (double i = -l ; i <= l; i = i + step) {
 //Fourier series terms here
     t1 = 1/3;
     t2 = +4*PI*cos(PI*i);
