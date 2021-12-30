@@ -24,9 +24,9 @@ void getData(double period, double numPt, double step, double p, double q) {
 
   for (double i =-1; i <= 1 ; i = i + step) {
 //Fourier series terms here
-    t1 =0.5*sin(i);
-    t2 =-0.5*sin(2*PI*i);
-    t3 =PI/8;
+    t2 =0.5*sin(i);
+    t3 =-0.5*sin(2*PI*i);
+    t1 =PI/8;
 	
     w = w + step;
 
