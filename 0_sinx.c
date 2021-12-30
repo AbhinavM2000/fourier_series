@@ -30,9 +30,8 @@ void getData(double period, double numPt, double step, double p, double q) {
 t2=-t2;
 t2=t2/3;
 t2=t2/PI;
-	t3 = cos(4*i);
+t3 = cos(4*i);
 t3=t3*2;
-t3=-t3;
 t3=t3/15;
 t3=t3/PI;	
     w = w + step;
