@@ -18,7 +18,7 @@ void getData(double numPt, double step, double p, double q) {
   }
 
   for (double i = p ; i <= q; i = i + step) {
-//Fourier series terms here (Check the fourier series, I'm not sure about the series)
+//Fourier series terms here (Check the fourier series, I'm not sure about this one)
    t1= 1/PI;
    t2= cos(2*i);
    t3= cos(4*i);
