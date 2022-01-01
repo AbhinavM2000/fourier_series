@@ -23,7 +23,7 @@
 
 ![A](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )
 *A*
-![B](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )
+![B](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/B.png?raw=true )
 *B*
 ![C](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/C.png?raw=true )
 *C*
