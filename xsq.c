@@ -4,9 +4,9 @@
 
 #define PI 3.14159265
 
-void getData(double period, double numPt, double step, double p, double q) {
-  double t1, t2, t3, fx_fourier, fx_real, k;
-  k = 1;
+void getData(double numPt, double step, double p, double q) {
+  double t1, t2, t3, fx_fourier, fx_real;
+
 
 //Opening files
   FILE * fp;
@@ -22,7 +22,7 @@ void getData(double period, double numPt, double step, double p, double q) {
 //Fourier series terms here
     t1 = 1/3;
     t2 = -cos(PI*i);
-    t3 = +cos(PI*2*i)/4-cos(PI*3*i)/9;
+    t3 = +0.25*cos(PI*2*i) - 0.11111111*cos(PI*3*i);  // 1/9 = 0.11111111
 	
 
 //Plotting x square
@@ -54,7 +54,7 @@ int main() {
 
   double step = (q-p) / numPt;
 
-  getData(q-p, numPt, step, p, q);
+  getData(numPt, step, p, q);
   printf("\nDone ! Run plot.py \n");
   return 0;
 }
