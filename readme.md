@@ -3,7 +3,7 @@
 
 <p>1. Run .c to plot points.<br></p>
 <p>2. Run plot.py to draw the graph.</p>
-<p>Note: After you run the C code, <b>data.txt</b> contains x y values of the fourier series function <b>data1.txt</b> contains x y values of the original function.</p>
+<p>Note: After you run the C code, <b>data.txt</b> contains <b>x y</b> values of the fourier series function <b>data1.txt</b> contains <b>x y</b> values of the original function.</p>
 
 <br>Questions (A-F):
 <br>
