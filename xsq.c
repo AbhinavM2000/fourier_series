@@ -22,7 +22,7 @@ void getData(double period, double numPt, double step, double p, double q) {
 //Fourier series terms here
     t1 = 1/3;
     t2 = -cos(PI*i)*4/PI/PI;
-    t3 = +cos(PI*2*i)/PI/PI-4/9*cos(PI*3*i)/PI/PI;
+    t3 = +cos(PI*2*i)/PI/PI-cos(PI*3*i)*4/9/PI/PI;
 	
 
 //Plotting x square
