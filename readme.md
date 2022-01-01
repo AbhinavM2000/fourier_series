@@ -13,6 +13,6 @@
 
 
 ### Requirements:
-<p>1. gcc or any C compiler.<br></p>
-<p>2. pyhton with matplotlib (for plot.py).</p><br>Questions:
+<p>1. <b>gcc</b> or any C compiler.<br></p>
+<p>2. <b>python</b> with matplotlib (for plot.py if you want to use it to plot graphs).</p><br>
 <br>
