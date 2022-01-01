@@ -32,7 +32,7 @@ void getData(double period, double numPt, double step, double p, double q) {
 //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
 //Fourier series function
-    fx_fourier =  t1 + (4/PI/PI)*(t3 + t3) ;
+    fx_fourier =  t1 + (4/PI/PI)*(t2 + t3) ;
 //Saving (x,fourier) to txt file
     fprintf(fp, "%lf %lf\n", i, fx_fourier);
 
