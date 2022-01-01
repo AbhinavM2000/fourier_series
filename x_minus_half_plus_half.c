@@ -23,11 +23,9 @@ void getData(double numPt, double step, double p, double q) {
    t2= -0.5*sin(4*PI*i);
    t3= (1/3)*sin(6*PI*i);
 	
-//Plotting 0 and sin x
-if(i>0&&i<PI)
-        fx_real = sin(i);
-if(i<0&&i>-PI)
-        fx_real = 0;
+//Plotting original function
+        fx_real = i;
+
 //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
 //Fourier series function
