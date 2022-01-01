@@ -24,23 +24,23 @@
 |![A](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )|
 |:--:| 
 |*A*|
-<br>
+
 |![B](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/B.png?raw=true )|
 |:--:| 
 |*B*|
-<br>
+
 |![C](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/C.png?raw=true )|
 |:--:| 
 |*C*|
-<br>
+
 |![D](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/D.png?raw=true )|
 |:--:| 
 |*D*|
-<br>
+
 |![E](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/E.png?raw=true )|
 |:--:| 
 |*E*|
-<br>
+
 |![F](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/F.png?raw=true )|
 |:--:| 
 |*F*|
