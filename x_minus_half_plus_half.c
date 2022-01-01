@@ -23,7 +23,6 @@ void getData(double numPt, double step, double p, double q) {
    t2= -0.5*sin(4*PI*i);
    t3= (1/3)*sin(6*PI*i);
 	
-
 //Plotting 0 and sin x
 if(i>0&&i<PI)
         fx_real = sin(i);
