@@ -21,15 +21,21 @@
 
 ### Graphs obtained from plot.py:
 
-![A](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )
-*A*
-![B](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/B.png?raw=true )
-*B*
-![C](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/C.png?raw=true )
-*C*
-![D](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/D.png?raw=true )
-*D*
-![E](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/E.png?raw=true )
-*E*
-![F](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/F.png?raw=true )
-*F*
+|![A](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )|
+|:--:| 
+|*A*|
+|![B](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/B.png?raw=true )|
+|:--:| 
+|*B*|
+|![C](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/C.png?raw=true )|
+|:--:| 
+|*C*|
+|![D](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/D.png?raw=true )|
+|:--:| 
+|*D*|
+|![E](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/E.png?raw=true )|
+|:--:| 
+|*E*|
+|![F](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/graph_output/F.png?raw=true )|
+|:--:| 
+|*F*|
