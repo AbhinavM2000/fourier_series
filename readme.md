@@ -14,5 +14,5 @@
 
 ### Requirements:
 <p>1. <b>gcc</b> or any C compiler.<br></p>
-<p>2. <b>python</b> with matplotlib (for plot.py if you want to use it to plot graphs).</p><br>
+<p>2. <b>python</b> with <b>matplotlib</b> (<i>for <b>plot.py</b> if you want to use it to plot graphs</i>).</p><br>
 <br>
