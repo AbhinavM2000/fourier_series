@@ -4,14 +4,9 @@
 
 #define PI 3.14159265
 
-void getData(double period, double numPt, double step, double p, double q) {
-  double l = period / 2;
-  int period_int, width;
-  period_int = l;
-  width = q - p;
-  double t1, t2, t3, fx_fourier, fx_real, k, w;
-  k = 1;
-  w = 0;
+void getData(double numPt, double step, double p, double q) {
+  double t1, t2, t3, fx_fourier, fx_real;
+
 //Opening files
   FILE * fp;
   fp = fopen("data.txt", "w");
@@ -22,19 +17,12 @@ void getData(double period, double numPt, double step, double p, double q) {
     return;
   }
 
-  for (double i = -PI ; i <= PI; i = i + step) {
+  for (double i = p ; i <= q; i = i + step) {
 //Fourier series terms here
-   t1 = 2/PI;
-   t2 = cos(2*i);
-	t2=t2*2;
-t2=-t2;
-t2=t2/3;
-t2=t2/PI;
-t3 = cos(4*i);
-t3=t3*2;
-t3=t3/15;
-t3=t3/PI;	
-    w = w + step;
+   t1= 1/PI;
+   t2= -cos(2*i)/3;
+   t3= -cos(4*i)/15;
+	
 
 //Plotting 0 and sin x
 if(i>0&&i<PI)
@@ -44,7 +32,7 @@ if(i<0&&i>-PI)
 //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
 //Fourier series function
-    fx_fourier =  (t1 + t3 + t3 ) ;
+    fx_fourier =  t1 + (2/PI)*(t2 + t3 ) ;
 //Saving (x,fourier) to txt file
     fprintf(fp, "%lf %lf\n", i, fx_fourier);
 
@@ -55,8 +43,8 @@ if(i<0&&i>-PI)
 
 int main() {
   int numPt;
-  double period, p, q;
-  period=2*PI;
+  double p, q;
+
 
   printf("Enter the number of points e.g. 100\n");
   scanf("%d", & numPt);
@@ -64,9 +52,9 @@ int main() {
  p=-PI;
  q=PI;
 
-  double step = period / numPt;
+  double step = (q-p) / numPt;
 
-  getData(period, numPt, step, p, q);
+  getData(numPt, step, p, q);
   printf("\nDone ! Run plot.py \n");
   return 0;
 }
