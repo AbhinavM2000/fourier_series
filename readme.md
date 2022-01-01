@@ -5,7 +5,7 @@
 <p>2. Run plot.py to draw the graph.</p>
 <p>Note: <b>data.txt</b> contains x y values of the fourier series function <b>data1.txt</b> contsains x y values of the original function.</p>
 
-<br>Questions:
+<br>Questions (A-F):
 <br>
 
 ![Questions](https://github.com/AbhinavM2000/fourier_sqwave/blob/main/qns.PNG?raw=true)
