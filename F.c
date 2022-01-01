@@ -23,7 +23,7 @@ void getData(double numPt, double step, double p, double q) {
    t2= -cos(i)+sin(i);
    t3= (1/3)*cos(3*i)-sin(2*i);
 	
-//Plotting 0 and sin x
+//Plotting 0 and π/2
 if(i>=0&&i<PI/2)
         fx_real = 0;
 if(i>PI/2&&i<PI)
