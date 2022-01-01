@@ -3,11 +3,31 @@
 #include<math.h>
 
 #define PI 3.14159265
+ 
+double calc_100_terms(double x, double an[100], double bn[100]) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) @ x
+  double fxxx, ao;
+  ao = -0.5; //ao for this function
+  int n;
+  n = 1;
+  fxxx = 0;
 
-void getData(double numPt, double step, double p, double q) {
-  double t1, t2, t3, fx_fourier, fx_real;
+  while (n <= 100) {
 
-//Opening files
+    fxxx += (an[n]) * cos(n * x);
+    fxxx += (bn[n]) * sin(n * x);
+    printf("%lf %lf %lf\n", fxxx, an[n], bn[n]); // for debugging (Here I am getting different values for fxxx even when both bn and an is 0)
+    n++;
+  }
+  fxxx = fxxx + (ao / 2);
+
+  return fxxx; // returned for printing to txt
+  fxxx = 0;
+}
+
+void getData(double numPt, double step, double p, double q, double an[100], double bn[100]) { //received an and bn
+  double fx_fourier, fx_real;
+
+  //Opening files
   FILE * fp;
   fp = fopen("data.txt", "w");
   FILE * fp2;
@@ -17,77 +37,60 @@ void getData(double numPt, double step, double p, double q) {
     return;
   }
 
-  for (double i = p ; i <= q; i = i + step) {
-	
-//Plotting step fn
-if(i>=-PI&&i<0)
-        fx_real = -1;
-if(i<PI&&i>0)
-        fx_real = 1;
+  for (double i = p; i <= q; i = i + step) {
 
-//Saving (x,fx_real) to txt file
+    //Plotting step fn
+    if (i >= -PI && i < 0)
+      fx_real = -1;
+    if (i < PI && i > 0)
+      fx_real = 1;
+
+    //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
-//Fourier series function
-    fx_fourier =  calc_100_terms(double x);
-//Saving (x,fourier) to txt file
-    fprintf(fp, "%lf %lf\n", i, fx_fourier);
 
+    //Fourier series function
+    fx_fourier = calc_100_terms(i, an, bn); //passed an bn and x 
+
+    //Saving (x,fourier) to txt file
+    fprintf(fp, "%lf %lf\n", i, fx_fourier);
   }
   fclose(fp);
   fclose(fp2);
 }
 
-
-double calc_100_terms(double x)
-{
-double fxxx,an[100],bn[100],ao;
-int n,w;
-n=0;
-w=0;
-while(n<=100)
-{
-an[w]= -2*sin(0.5*n*PI);
-an[w]= an[w]/PI;
-an[w]=an[w]*-1;
-an[w]=an[w]/n;
-bn[w]=cos(n*0.5*PI)- pow(-1,n);
-bn[w]=bn[w]/PI;
-bn[w]=2*bn[w];
-bn[w]=bn[w]/n;
-n++;
-w++;
-}
-
-while(w<=100)
-{
-
-fxxx= an[w]*cos(w*x) + bn[w]*sin(w*x);
-fxxx = fxxx + ao/2;
-
-}
-
-return fxxx;
-}
-
-
-
-
-
-
 int main() {
-  int numPt;
-  double p, q;
+  int numPt, N;
+  N = 1;
+  double p, q, an[100], bn[100];
 
+  //Calculating 100 coefficients for an and bn for this function
+  while (N <= 100) {
+    an[N] = -2 * sin(0.5 * N * PI);
+    an[N] = (an[N]) / PI;
+    an[N] = -(an[N]);
+
+    an[N] = (an[N]) / N;
+    bn[N] = cos(N * 0.5 * PI) - pow(-1, N);
+
+    bn[N] = (bn[N]) / PI;
+    bn[N] = 2 * (bn[N]);
+    bn[N] = (bn[N]) / N;
+    N++;
+  }
 
   printf("Enter the number of points e.g. 100\n");
   scanf("%d", & numPt);
 
- p=-0.5;
- q=0.5;
+  //limits
+  p = -1;
+  q = 1;
 
-  double step = (q-p) / numPt;
+  //calculating step
+  double step = (q - p) / numPt;
 
-  getData(numPt, step, p, q);
+  //passed an and bn
+  getData(numPt, step, p, q, an, bn);
+
   printf("\nDone ! Run plot.py \n");
   return 0;
 }
