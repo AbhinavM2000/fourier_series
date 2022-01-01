@@ -1,7 +1,7 @@
 
 ## Usage:
 
-<p>1. Run .c to plot points.<br></p>
+<p>1. Run .c to plot points and get txt files with x y coordinates.<br></p>
 <p>2. Run plot.py to draw the graph.</p>
 <p><b>Note:</b> After you run the C code, <b>data.txt</b> contains <b>x y</b> values of the fourier series function <b>data1.txt</b> contains <b>x y</b> values of the original function.</p>
 
