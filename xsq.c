@@ -21,8 +21,8 @@ void getData(double period, double numPt, double step, double p, double q) {
   for (double i = p ; i <= q; i = i + step) {
 //Fourier series terms here
     t1 = 1/3;
-    t2 = -cos(PI*i)*4/PI/PI;
-    t3 = +cos(PI*2*i)/PI/PI-cos(PI*3*i)*4/9/PI/PI;
+    t2 = -cos(PI*i);
+    t3 = +cos(PI*2*i)/4-cos(PI*3*i)/9;
 	
 
 //Plotting x square
@@ -32,7 +32,7 @@ void getData(double period, double numPt, double step, double p, double q) {
 //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
 //Fourier series function
-    fx_fourier =  (t1 + t3 + t3 ) ;
+    fx_fourier =  t1 + (4/PI/PI)*(t3 + t3) ;
 //Saving (x,fourier) to txt file
     fprintf(fp, "%lf %lf\n", i, fx_fourier);
 
