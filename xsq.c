@@ -5,13 +5,9 @@
 #define PI 3.14159265
 
 void getData(double period, double numPt, double step, double p, double q) {
-  double l = period / 2;
-  int period_int, width;
-  period_int = l;
-  width = q - p;
-  double t1, t2, t3, fx_fourier, fx_real, k, w;
+  double t1, t2, t3, fx_fourier, fx_real, k;
   k = 1;
-  w = 0;
+
 //Opening files
   FILE * fp;
   fp = fopen("data.txt", "w");
@@ -22,13 +18,12 @@ void getData(double period, double numPt, double step, double p, double q) {
     return;
   }
 
-  for (double i = -l ; i <= l; i = i + step) {
+  for (double i = p ; i <= q; i = i + step) {
 //Fourier series terms here
     t1 = 1/3;
-    t2 = -4*PI*cos(PI*i);
-    t3 = +PI*cos(PI*2*i)-4*PI/9*cos(PI*3*i);
+    t2 = -cos(PI*i)/4/PI/PI;
+    t3 = +cos(PI*2*i)/PI/PI;
 	
-    w = w + step;
 
 //Plotting x square
 
@@ -48,8 +43,8 @@ void getData(double period, double numPt, double step, double p, double q) {
 
 int main() {
   int numPt;
-  double period, p, q;
-  period=2;
+  double p, q;
+ 
 
   printf("Enter the number of points e.g. 100\n");
   scanf("%d", & numPt);
@@ -57,9 +52,9 @@ int main() {
  p=-1;
  q=1;
 
-  double step = period / numPt;
+  double step = (q-p) / numPt;
 
-  getData(period, numPt, step, p, q);
+  getData(q-p, numPt, step, p, q);
   printf("\nDone ! Run plot.py \n");
   return 0;
 }
