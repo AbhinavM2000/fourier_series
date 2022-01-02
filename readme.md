@@ -21,6 +21,11 @@
 
 ### Graphs obtained from plot.py:
 
+|![A1](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/step_100.gif?raw=true )|
+|:--:| 
+|*stacked graphs from n-terms_stp_fn.c*|
+
+
 |![A](https://github.com/AbhinavM2000/fourier_series/blob/main/graph_output/A.png?raw=true )|
 |:--:| 
 |*A*|
