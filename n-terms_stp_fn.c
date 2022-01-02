@@ -60,7 +60,7 @@ int main() {
 
    double p, q, an[num_coeff], bn[num_coeff];
 
-   //Calculating 100 coefficients for an and bn for this function
+   //Calculating required number of coefficients for an and bn for this function
    while (N <= num_coeff) {
       if (N % 2 == 0) //N even case
       {
