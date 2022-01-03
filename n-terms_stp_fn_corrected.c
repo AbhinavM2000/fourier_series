@@ -10,6 +10,8 @@ double calc_100_terms(double x, double an[100], double bn[100], int n) { //funct
    return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned for printing to txt
 }
 
+
+
 void getData(double numPt, double step, double p, double q, double an[100], double bn[100], int num_coeff) { //received an and bn
    double fx_fourier, fx_real, ao;
    ao = -1; //ao for this function
@@ -30,7 +32,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
       //Plotting step fn
       if (i >= -PI && i < 0)
          fx_real = -1;
-      if (i < PI && i > 0)
+      if (i <= PI && i > 0)
          fx_real = 1;
 
       //Saving (x,fx_real) to txt file
@@ -40,7 +42,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
          fx_fourier = fx_fourier + calc_100_terms(i, an, bn, k); //passed an bn and x , here k is for representing the kth coefficient of an bn 
       }
       //Saving (x,fourier) to txt file
-      fprintf(fp, "%lf %lf\n", i, 2 * ((ao / 2) + fx_fourier)); // ao/2 added
+      fprintf(fp, "%lf %lf\n", i, 1 * ((ao / 2) + fx_fourier)); // ao/2 added
       fx_fourier = 0; // reset for the next value of x
    }
    fclose(fp);
@@ -50,7 +52,6 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
 int main() {
    int numPt, N, flag, num_coeff;
    N = 1;
-   flag = 1;
 
    printf("Enter the number of points e.g. 100\n");
    scanf("%d", & numPt);
@@ -61,32 +62,21 @@ int main() {
    double p, q, an[num_coeff], bn[num_coeff];
 
    //Calculating required number of coefficients for an and bn for this function
-   while (N <= num_coeff) {
-      if (N % 2 == 0) //N even case
-      {
-         an[N] = 0;
-         bn[N] = 0;
-      }
+   while (N <= num_coeff) 
+{
 
-      if (N % 2 == 1) // N odd case
-      {
-         flag = flag * -1;
-         bn[N] = (2 / PI) / N;
-      }
-      if (N % 2 == 1 && flag == 1) // 1 , 5 , 9 , 13 .....
-      {
-         an[N] = -(2 / PI) / N;
-      }
-      if (N % 2 == 1 && flag == -1) // 3 , 7 , 11 , 15 .....
-      {
-         an[N] = (2 / PI) / N;
-      }
-      N++;
-   }
+
+
+an[N] = -(2/N/PI)*sin(N*PI*0.5);
+bn[N] = (2/N/PI)*(cos(N*PI*0.5)-(pow(-1,N)));
+   N++;
+
+  
+ }
 
    //limits
-   p = -1;
-   q = 1;
+   p = -PI;
+   q = PI;
 
    //calculating step
    double step = (q - p) / numPt;
