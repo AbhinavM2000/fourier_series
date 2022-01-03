@@ -22,7 +22,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
     return;
   }
 
-  for (double i = p; i <= q; i = i + step) { //for loop #1 to vary x in f(x)
+  for (double i =p; i <= q; i = i + step) { //for loop #1 to vary x in f(x)
 
     //Plotting step fn
     if (i >= -PI && i < 0)
@@ -31,7 +31,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
       fx_real = 1;
     //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
-    for (double k = 1; k <= 100; k++) { //for loop #2 to sum up coefficients from 1 to 100 for that value of x
+    for (int k = 1; k <= 100; k++) { //for loop #2 to sum up coefficients from 1 to 100 for that value of x
       //Fourier series function
       fx_fourier = fx_fourier + calc_100_terms(i, an, bn, k); //passed an bn and x , here k is for representing the kth coefficient of an bn 
     }
@@ -54,8 +54,8 @@ int main() {
 
   //Calculating required number of coefficients for an and bn for this function
   while (N <= 100) {
-    an[N] = -(0.6366/N)*sin(N * PI/2);  //Formula for an
-    bn[N] = (0.6366/N)*(cos(N * PI/2) - (pow(-1, N)));   //Formula for bn
+    an[N] = -(0.6366/N)*sin(N * 1.57);  //Formula for an
+    bn[N] = (0.6366/N)*(cos(N * 1.57) - (pow(-1, N)));   //Formula for bn
 printf("%d %lf %lf \n",N, an[N], bn[N]);
     N++;
   }
