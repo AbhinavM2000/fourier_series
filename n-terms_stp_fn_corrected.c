@@ -54,8 +54,9 @@ int main() {
 
   //Calculating required number of coefficients for an and bn for this function
   while (N <= 100) {
-    an[N] = -(2 / N / PI) * sin(N * PI * 0.5);  //Formula for an
-    bn[N] = (2 / N / PI) * (cos(N * PI * 0.5) - (pow(-1, N)));   //Formula for bn
+    an[N] = -(0.6366/N)*sin(N * PI/2);  //Formula for an
+    bn[N] = (0.6366/N)*(cos(N * PI/2) - (pow(-1, N)));   //Formula for bn
+printf("%d %lf %lf \n",N, an[N], bn[N]);
     N++;
   }
   //limits
