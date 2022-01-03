@@ -37,7 +37,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
       fx_fourier = fx_fourier + calc_n_terms(i, an, bn, k); //passed an bn and x , here k is for representing the kth coefficient of an bn 
     }
     //Saving (x,fourier) to txt file
-    fprintf(fp, "%lf %lf\n", i, 1 * ((ao / 2) + fx_fourier)); // ao/2 added to the final f(x) value
+    fprintf(fp, "%lf %lf\n", i,  ((ao / 2) + fx_fourier)); // ao/2 added to the final f(x) value
     fx_fourier = 0; // reset for the next value of x
   }
   fclose(fp);
@@ -45,7 +45,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
 }
 
 int main() {
-  int numPt, N, flag, num_coeff;
+  int numPt, N,num_coeff;
   N = 1;
   printf("Enter the number of points e.g. 100\n");
   scanf("%d", & numPt);
