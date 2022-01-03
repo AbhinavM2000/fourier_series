@@ -2,7 +2,7 @@
 #include<math.h>
 #define PI 3.14159265
 
-double calc_n_terms(double x, double an[1000], double bn[1000], int n) { //function that evaluates ao/2 + Σ 1 to n (an cosnx + bn sin nx) at x
+double calc_n_terms(double x, double an[100], double bn[100], int n) { //function that evaluates ao/2 + Σ 1 to n (an cosnx + bn sin nx) at x
   double fxxx, ao;
   fxxx = 0;
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 37 for summation
