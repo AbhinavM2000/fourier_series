@@ -3,12 +3,14 @@
 #define PI 3.14159265
 
 double calc_100_terms(double x, double an[100], double bn[100], int n) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) at x
-
+//printf("%d %lf %lf \n",n, an[n], bn[n]);
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 37 for summation
+
 }
 
-void getData(double numPt, double step, double p, double q, double an[100], double bn[100]) { //received an and bn
+void getData(int numPt, double step, double p, double q, double an[100], double bn[100]) { //received an and bn
   double fx_fourier, fx_real, ao;
+fx_fourier = 0;
   ao = -1; //ao for this function
   int k;
   k = 1;
@@ -36,6 +38,7 @@ void getData(double numPt, double step, double p, double q, double an[100], doub
       fx_fourier = fx_fourier + calc_100_terms(i, an, bn, k); //passed an bn and x , here k is for representing the kth coefficient of an bn 
     }
     //Saving (x,fourier) to txt file
+printf(" %lf %lf \n",i, fx_fourier);
     fprintf(fp, "%lf %lf\n", i,  ((ao / 2) + fx_fourier)); // ao/2 added to the final f(x) value
     fx_fourier = 0; // reset for the next value of x
   }
