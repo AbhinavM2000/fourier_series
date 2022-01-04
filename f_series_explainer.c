@@ -3,13 +3,12 @@
 #define PI 3.14159265
 
 double calc_100_terms(double x, double an[100], double bn[100], int n) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) at x
-//printf("%d %lf %lf \n",n, an[n], bn[n]);
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 37 for summation
-
 }
 
-void getData(int numPt, double step, double p, double q, double an[100], double bn[100],int num_coeff) { //received an and bn
-  double fx_fourier, fx_real, ao;
+void getData(int numPt, double p, double q, double an[100], double bn[100],int num_coeff) { //received an and bn
+  double fx_fourier, fx_real, ao, step;
+step = (q - p) / numPt; //calculating step
 fx_fourier = 0;
   ao = 1; //ao for this function
   int k;
@@ -33,7 +32,7 @@ fx_fourier = 0;
       fx_real = 1;
     //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
-    for (int k = 1; k <= num_coeff; k++) { //for loop #2 to sum up coefficients from 1 to 100 for that value of x
+    for (int k = 1; k <= num_coeff; k++) { //for loop #2 to sum up coefficients from 1 to num_coeff for that value of x
       //Fourier series function
       fx_fourier = fx_fourier + calc_100_terms(i, an, bn, k); //passed an bn and x , here k is for representing the kth coefficient of an bn 
     }
@@ -45,6 +44,9 @@ printf(" %lf %lf \n",i, fx_fourier);
   fclose(fp);
   fclose(fp2);
 }
+
+
+
 
 int main() {
   int numPt, N, num_coeff;
@@ -66,10 +68,8 @@ int main() {
   //limits
   p = -PI;
   q = PI;
-  //calculating step
-  double step = (q - p) / numPt;
   //passed an and bn
-  getData(numPt, step, p, q, an, bn,num_coeff);
+  getData(numPt, p, q, an, bn,num_coeff);
   printf("\nDone ! Run plot.py \n");
   return 0;
 }
