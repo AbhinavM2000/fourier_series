@@ -2,11 +2,11 @@
 #include<math.h>
 #define PI 3.14159265
 
-double calc_n_terms(double x, double an[100], double bn[100], int n) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) at x
+double calc_n_terms(double x, double an[200], double bn[200], int n) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) at x
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 40 for summation
 }
 
-void getData(int numPt, double p, double q, double an[100], double bn[100], int num_coeff) { //received an and bn
+void getData(int numPt, double p, double q, double an[200], double bn[200], int num_coeff) { //received an and bn
   double fx_fourier, fx_real, ao, step;
   int n;
   step = (q - p) / numPt; //calculating step
@@ -48,7 +48,7 @@ void getData(int numPt, double p, double q, double an[100], double bn[100], int 
 
 int main() {
   int numPt, N, num_coeff;
-  double p, q, an[100], bn[100];
+  double p, q, an[200], bn[200];
   N = 1;
 
   //limits
