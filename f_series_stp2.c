@@ -46,7 +46,7 @@ void getData(int numPt, double p, double q, double an[200], double bn[200], int 
 
 
 
-int main() {
+void main() {
   int numPt, N, num_coeff;
   double p, q, an[200], bn[200];
   N = 1;
@@ -74,5 +74,4 @@ int main() {
 
 
   printf("\nDone ! Run plot.py \n");
-  return 0;
 }
