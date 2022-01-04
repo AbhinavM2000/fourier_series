@@ -2,7 +2,7 @@
 #include<math.h>
 #define PI 3.14159265
 
-double calc_n_terms(double x, double an[200], double bn[200], int n) { //function that evaluates ao/2 + Σ 1 to 100 (an cosnx + bn sin nx) at x
+double calc_nx(double x, double an[200], double bn[200], int n) { //function that evaluates (an cosnx + bn sin nx) at x
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 40 for summation
 }
 
@@ -32,7 +32,7 @@ void getData(int numPt, double p, double q, double an[200], double bn[200], int 
 
     for (int n = 1; n <= num_coeff; n++) { //for loop #2 to sum up coefficients from 1 to num_coeff for that value of x
       //Fourier series function
-      fx_fourier = fx_fourier + calc_n_terms(x, an, bn, n); //passed an bn and x
+      fx_fourier = fx_fourier + calc_nx(x, an, bn, n); //passed an bn and x
     }
 
     //Saving (x,fx_fourier) to txt file
