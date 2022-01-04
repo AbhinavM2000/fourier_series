@@ -35,7 +35,7 @@ void getData(int numPt, double p, double q, double an[100], double bn[100], int 
       fx_fourier = fx_fourier + calc_n_terms(x, an, bn, n); //passed an bn and x
     }
 
-    //Saving (x,fourier) to txt file
+    //Saving (x,fx_fourier) to txt file
     fprintf(fp, "%lf %lf \n", x, ((ao / 2) + fx_fourier)); // ao/2 added to the final f(x) value
     
     fx_fourier = 0; // reset for the next value of x
