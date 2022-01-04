@@ -3,7 +3,7 @@
 #define PI 3.14159265
 
 double calc_nx(double x, double an[200], double bn[200], int n) { //function that evaluates (an cosnx + bn sin nx) at x for that n
-  return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 40 for summation
+  return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 39 for summation
 }
 
 void getData(int numPt, double p, double q, double an[200], double bn[200], int num_coeff) { //received an and bn
