@@ -2,7 +2,7 @@
 #include<math.h>
 #define PI 3.14159265
 
-double calc_nx(double x, double an[200], double bn[200], int n) { //function that evaluates (an cosnx + bn sin nx) at x
+double calc_nx(double x, double an[200], double bn[200], int n) { //function that evaluates (an cosnx + bn sin nx) at x for that n
   return ((an[n]) * cos(n * x)) + ((bn[n]) * sin(n * x)); // returned to line 40 for summation
 }
 
