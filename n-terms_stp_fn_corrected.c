@@ -27,9 +27,9 @@ fx_fourier = 0;
   for (double i =p; i <= q; i = i + step) { //for loop #1 to vary x in f(x)
 
     //Plotting step fn
-    if (i >= -PI && i < 0)
+    if (i >= -PI && i < PI/2)
       fx_real = -1;
-    if (i <= PI && i > 0)
+    if (i <= PI && i > PI/2)
       fx_real = 1;
     //Saving (x,fx_real) to txt file
     fprintf(fp2, "%lf %lf\n", i, fx_real);
